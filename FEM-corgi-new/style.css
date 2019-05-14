@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 30px;
+}
+h1,
+h2
+ {
+    text-align: center; 
+}
+
+main {
+    display: grid;    
+    grid-template-columns: 25% auto 25%;
+    grid-auto-rows: auto auto;
+
+    grid-template-areas:
+            "html breaking css"
+            "boy nav-bar nav-bar";   
+}
+
+.html {
+    grid-area: html;
+}
+
+.breaking {
+    grid-area: breaking;
+}
+
+.css {
+    grid-area: css;
+}
+
+.boy {
+    grid-area: boy;
+}
+
+nav {
+    grid-area: nav-bar;
+}
+
+
+section,
+nav {
+    border: 1px black solid;
+    padding: 10px;   
+}
+
+.breaking img {
+    width: 100%;
+}
+
+
+
+nav {
+    font-size: 2em;
+  font-weight: bold;
+  padding: 0;
+}
+
+nav > a {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 20%;
+     
+}
+
+
+
+
+
+/* NAV COLORS*/
+.politics {
+    background-color: lightgoldenrodyellow;
+}
+
+.technology {
+    background-color: lightblue;
+
+}
+
+.local {
+    background-color: lightgreen;
+
+}
+
+.opinion {
+    background-color: lightskyblue;
+
+}
+
+.sports {
+    background-color: plum;
+
+}
+
+
+
+
+/* quit styles*/
+
+
+a {
+    text-decoration: none;
+    color: black
+}
