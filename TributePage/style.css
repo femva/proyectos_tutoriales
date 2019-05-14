@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+
+}
+
+body{
+    
+    text-align: center;
+}
+
+#title {
+    background-color: white;
+    color:black;
+}
+
+#img-div {
+    color:white;
+    background-color: black;
+    display: grid;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: 10px;
+   
+    justify-content: center;
+
+}
+
+img {
+    max-width: 100%; 
+  display: block; 
+  height: auto;
+  margin: auto;
+  max-height: 100vh;
+}
+
+#tribute-info {
+    
+    background-color: white;
+    color:black;
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+        "list bio";
+        align-content:space-around;
+        font-size: 1.1em;
+    line-height: 1.5em;
+ }
+
+
+#tribute-info #life
+ {
+    grid-area: bio;
+    margin:20px  10% 20px 10%;
+    
+    
+}
+
+#tribute-info #timeline {
+    grid-area: list;
+    text-align: left;
+    background-color: #b6b6b6;
+    display: grid;
+    
+}
+
+
+#tribute-info ul li { 
+    justify-items: start;
+    margin-top: 30px;
+    
+    
+}
+
+footer {
+    width: 100%;
+    color:white;
+    background-color: black;
+    text-align: center;
+    font-size: 20px;
+}
+footer a {
+    color: white;
+}
+/* Responsive*/
+@media (max-width: 600px){
+    #tribute-info {
+        
+        
+        grid-template-areas: 
+            "bio bio"
+            "list list";
+            
+    }
+}
+
+
+
+
