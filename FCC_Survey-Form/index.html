@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link type="text/css" rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="title">Share with us</h1>
+    <p id="description">Tell us about you favorite anime and be part of the biggest anime communiy</p>
+    <main id="main">
+
+            
+
+    <form method="get" id="survey-form">
+        
+        <div class="selection">
+           <label class="labels" for="anime-name">Anime name:</label>
+            <input class="inputs" type="text" placeholder="My favorite anime is">
+        </div>
+        
+        <div class="selection">
+                <label class="labels" for="times">have you seen it more than once:</label>
+            
+                    <ul class="inputs" style="list-style: none;">                    
+                        <li>
+                            <input type="radio" name="times" id="" value="yes">
+                            <label for="times">Yes</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="times" id="" value="no">
+                            <label for="times">No</label>
+                        </li>
+                    </ul>
+        </div>
+        
+        <div class="selection">
+            <label class="labels" id="number-label" for="times-number">How many times?:</label>
+            <input class="inputs" type="number" min="1" max="50" id="number" placeholder="Times">
+        </div>
+
+        <div class="selection">
+            <label for="review">Tell us why you like it:</label>
+            <br>
+            <textarea name="review" id="" cols="30" rows="10"></textarea>
+            
+        </div>
+        
+        
+        
+        <h3>Let us know more about you</h3>
+
+        <div class="selection">
+                <label class="labels" for="sites">Choose your favorite site/sites to watch anime:</label>
+            
+                    <ul class="inputs" style="list-style: none;">                
+                            <li> <input type="checkbox" name="site" value="Animeland" >Animeland</li>
+                            <li><input type="checkbox" name="site" value="AnimeFLV">AnimeFLV</li>
+                            <li><input type="checkbox" name="site" value="AnimeID">AnimeID</li>
+                            <li>
+                                Other
+                            </li>    
+                            <li><input type="text" name="site" placeholder="I prefer..."></li>        
+                    </ul>                         
+        </div>
+
+        <div class="selection">
+            <label class="labels" for="format">Other than anime tell us what do you prefer:</label>            
+                    <select class="inputs" id="dropdown" name="format" >
+                            <option value="manga">Manga</option>
+                            <option value="ligh-novel">Light novel</option>
+                            <option value="visual-novel">Visual novel</option>
+                    </select>            
+        </div>
+
+        <div class="selection">
+            <label class="labels" for="genre">Wich genre do you prefer?:</label>
+                    <ul class="inputs" style="list-style: none;">
+                            <li>
+                                <input type="radio" name="genre" value="shoujo" >
+                                <label for="genre">Shoujo</label>                    
+                            </li>
+                            <li>
+                                <input type="radio" name="genre" value="shounen" id="">
+                                <label for="genre">Shounen</label>                    
+                            </li>
+                    </ul>
+        </div>
+        
+        
+        <h3>would you like to recive our anime-newsletter ? </h3>
+        <div class="selection">
+            <label class="labels" id="name-label" for="name">Name:</label>
+            <input class="inputs" type="text" name="name" id="name" placeholder="Enter your name" required>
+        </div>
+
+        <div class="selection">
+            <label class="labels" id="email-label" for="email">Email:</label>
+            <input class="inputs" type="email" name="email" id="email" placeholder="Enter your Email" required>
+        </div>
+
+        <div class="selection">
+            <label class="labels" id="age-label" for="age">Age :</label>
+            <input class="inputs" type="number" name="age" id="" placeholder="Enter your age">
+        </div>
+
+
+<br>
+        <input type="submit" name="submit" id="submit">        
+
+
+       
+    </form>
+
+
+
+    </main>
+
+    
+
+
+</body>
+</html>
