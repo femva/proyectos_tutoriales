@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        https://css3-tutorial.net/introduction/what-is-css/
+    https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav_push
+    -->
+    <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <!--NAV-BAR-->
+    <nav id="navbar">
+            <header>Introduction to CSS</header>
+                <div id="mySidenav" class="sidenav">
+                        <header>Index</header>
+
+                                <a class="nav-link" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                                <a class="nav-link" href="#What_is_CSS?">What is CSS?</a>
+                                <a class="nav-link" href="#Hello,_CSS_world!">Hello, CSS world!</a>
+                                <a class="nav-link" href="#The_Anatomy_of_a_CSS_Rule">The Anatomy of a CSS Rule</a>
+                                <a class="nav-link" href="#How_CSS_works">How CSS works</a>
+                                <a class="nav-link" href="#Linking_CSS_to_HTML">Linking CSS to HTML</a>
+                                <a class="nav-link" href="#Introduction_to_CSS_Selectors">Introduction to CSS Selectors</a>
+                                <a class="nav-link" href="#The_Element_selector">The Element selector</a>
+                                <a class="nav-link" href="#The_Class_selector">The Class selector</a>
+                                <a class="nav-link" href="#The_ID_selector">The ID selector</a>
+                                <a class="nav-link" href="#Grouping_selectors">Grouping selectors</a>
+                                <ul>
+                                        <a href="#What_is_CSS?"><li>TOP</li></a>
+                                        <a href="#Reference"><li>BOTTOM</li></a>
+                                        <a href="#"><li></li></a>
+                                
+                                </ul>
+                              
+                   </div>
+                   <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+
+    </nav>
+
+
+
+    <!--INFO-->
+    <main id="main-doc">
+
+        <section id="What_is_CSS?" class="main-section">
+            <header>What is CSS?</header>
+            <p>CSS is short for Cascading Style Sheets and is the primary language used to describe look and formatting for webpages across the Internet and documents of markup (e.g. HTML and XML) in general.</p>
+            <p>A markup language like HTML was initially designed to provide information about formatting and looks itself, but it soon became clear that it would make much more sense to split this into two layers: Document Content and Document Presentation, with CSS fulfilling the task of the latter. Historically that is why HTML has tags like font, which sole purpose is to adjust font family, color and size locally, a job that is today handled by CSS. This allows the developer to re-use formatting rules across several places in the same document and even across multiple documents. Here's an example to prove my point, and don't worry if it's not entirely clear to you what it does - all aspects will be explained throughout this tutorial:</p>
+            <h3>Old style text formatting, using only HTML:</h3>
+            <code>
+                    <p class="codepen" data-height="265" data-theme-id="0" data-default-tab="html,result" data-user="franciscomelov" data-slug-hash="YbxXaq" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="1">
+                            <span>See the Pen <a href="https://codepen.io/franciscomelov/pen/YbxXaq/">
+                            1</a> by Francisco Ecatl Melo Valle (<a href="https://codepen.io/franciscomelov">@franciscomelov</a>)
+                            on <a href="https://codepen.io">CodePen</a>.</span>
+                          </p>
+                          <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+            </code>
+            <h3>A more modern approach with CSS:</h3>
+            <code>
+                    <p class="codepen" data-height="265" data-theme-id="0" data-default-tab="html,result" data-user="franciscomelov" data-slug-hash="xNLGzK" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="What is CSS?-2">
+                            <span>See the Pen <a href="https://codepen.io/franciscomelov/pen/xNLGzK/">
+                            What is CSS?-2</a> by Francisco Ecatl Melo Valle (<a href="https://codepen.io/franciscomelov">@franciscomelov</a>)
+                            on <a href="https://codepen.io">CodePen</a>.</span>
+                          </p>
+                          <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+            </code>
+
+            <p>Notice how I simply re-use the same set of rules across several HTML tags. This is already an advantage when using it three times, like we do in the example, but it doesn't end there - put the CSS in an external stylesheet file (more on that later) and you can use the same rules across your ENTIRE website. And how about when you decide that highlighted text should be red instead of blue? With the first approach, you would have to manually edit the tags everywhere you used it - with CSS, just change the single ".highlight" rule!</p>
+            <h4>Summary</h4>
+            <p>CSS allows you to easily apply rules about formatting and layout to your HTML elements and then re-use those rules across multiple elements and even pages. In this introduction, we looked at some CSS code, but we did not talk about how it works and why it looks the way it does - this will be the subject for the next couple of chapters, where we start from scratch and explain it all in details.</p>
+        </section>
+
+
+        <section id="Hello,_CSS_world!" class="main-section">
+                <header>Hello, CSS world!</header>
+                <p>After discussing what CSS is and why you should use it, you're probably eager to see it in action. If you're reading this in your webbrowser, then you can already see CSS doing its magic - from header colors and sizes to code sample boxes, menus, lists and pretty much anything else - if it has a background, a border, a different text size or color, then it's likely the thanks to CSS. However, that might be a bit too complex to comprehend at the moment, so let's bring it down to a much more basic level.</p>
+                <p>Throughout the history of programming, every tutorial with respect for itself has started with a "Hello, world!" example, with the sole purpose of showing the most basic way to bring the text "Hello, world!" to the user's screen. This could however easily be accomplished in pure HTML, without the use of any CSS, so we'll spice it up just a bit with a different color:</p>
+                <code>
+                    <p class="codepen" data-height="240" data-theme-id="0" data-default-tab="html,result" data-user="franciscomelov" data-slug-hash="mYpKXg" style="height: 240px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Hello, CSS world!-1">
+                        <span>See the Pen <a href="https://codepen.io/franciscomelov/pen/mYpKXg/">
+                             Hello, CSS world!-1</a> by Francisco Ecatl Melo Valle (<a href="https://codepen.io/franciscomelov">@franciscomelov</a>)
+                            on <a href="https://codepen.io">CodePen</a>.</span>
+                    </p>
+                    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                </code>
+                <p>That's it - we just wrote our first CSS rule, targeted toward the H1 tag and used it to change the text color, using the color property and a color value called DeepSkyBlue. You can check the result by pasting the code into your editor or simply by clicking the test button above the code sample.</p>
+                <h4>Summary</h4>
+                <p>As you can probably see, CSS is a fairly simple language, but fear not if you didn't quite understand our first example. In the next chapter, we'll discuss what the above CSS code actually means and why it's written the way it is.</p>
+        </section>
+
+        <section id="The_Anatomy_of_a_CSS_Rule" class="main-section">  
+            <header>The Anatomy of a CSS Rule</header>
+            <p>So, in the previous chapter, we used the classic "Hello, world!" example to get a glimpse of just how easy it is to style an HTML element with CSS. But why did it look the way it did? In this chapter, we'll focus on the anatomy and syntax of CSS, to get a deeper understanding of how it works. Let's have a look at the previously mentioned example again, where we had a CSS rule which targeted H1 elements:</p>
+            <pre>
+                <code>
+                   h1 {
+                    color: DeepSkyBlue;
+                    }
+                </code>
+            </pre> 
+            <p>What we have here is a <span>selector</span> with one <span>property</span> and one <span>value</span> - these are the core concepts of CSS and you should try to remember their names as you progress through this tutorial. In this example, <span>h1 is the selector name, color is the property</span> and <span>DeepSkyBlue is the value</span>.</p>
+            <p>In between these three concepts, you see a variety of special characters: There's the <span>curly braces</span> around the property and value, there's the <span>colon</span> separating the property from the value and there's the <span>semicolon</span> after the value. Each of them makes it easy for the browser to parse and understand your CSS code: The curly braces allow you to group several properties into the same rule (selector), the colon tells the parser where the property ends and the value starts, and the semicolon tells the parser where the value ends.</p>
+            <p>This might seem a bit too complex for a simple selector like the one we have above, but as soon as we use more complex selector names with more properties and more complex values, it makes perfect sense. Let me illustrate it with a more complex example:</p>
+            <pre>
+                <code>
+                                h1, h2, h3 {
+                                        color: DeepSkyBlue;
+                                        background-color: #000;
+                                        margin: 10px 5px;
+                                    }
+                                    
+                                    h2 {
+                                        color: GreenYellow;
+                                    }
+                </code>
+            </pre>
+            <p>Now we have several selectors, with the first one targeting several elements, as well as several properties and several values - now you can probably see why we need the CSS syntax rules to allow for proper parsing of your instructions.</p>
+            <h3>Formatting and Whitespace in CSS</h3>
+            <p>You may we wondering why I'm formatting the selector the way I do: The initial curly brace is on the same line as the selector name, but the ending one is on a line of its own, properties have been indented and there's a space after the colon separating property and value but not before it. <span>Why? Because that's how I like it but the truth is that the CSS parser doesn't care about whitespace.</span></p>
+            <p>Some people prefer to have the initial curly brace on its own line and to have a space before the colon as well:</p>
+            <pre>
+                    <code>
+                                h1 {
+                                        color: DeepSkyBlue;
+                                    }
+                    </code>
+            </pre>
+            <p>And that works just as well. In fact, a lot of software has been written to compact/minify CSS to take up the least possible amount of space, like this:</p>
+            <pre>
+                <code>
+                                h1{color : DeepSkyBlue;}
+                </code>
+            </pre>
+            <p>That will work just fine too, but for more complex rules, it will make it harder to read and edit. However, the parser will understand it just as well as our first example, thanks to the special characters used as separators, as already discussed.</p>
+            <h4>Summary</h4>
+            <p>In this chapter, we've learned that the basic ingredients of CSS is the selectors, properties and values. A CSS document can contain multiple selectors and a selector can have multiple properties which in turn can have a value consisting of one or several elements. We also learned that curly braces, colons and semicolons separate each of the three ingredients from each other, and that whitespace and formatting is really up to you - the parser generally doesn't care.</p>
+            <p>We have looked at some basic selectors with some basic properties by now, but selectors is a much deeper subject and there are plenty more properties to work with. We will of course be discussing both in much more detail later in this tutorial.</p>
+        </section>
+
+        <section id="How_CSS_works" class="main-section">
+                <header>How CSS works</header>
+                <p>CSS is interpreted by the browser (the application used to view the webpage, e.g. Internet Explorer or Google Chrome) and then used to decide how the webpage should look. This also means that while there is a very thorough specification of the CSS language, the many browsers across all of the possible devices (desktop computers, tablets, mobile phones etc.) interprets your CSS code in its own way. This means that even though most of your work will likely look and act the way you expect it to, there might be subtle differences if you view your work in some of the many browsers on the market.</p>
+                <p>Since CSS is just a specification and not a law, browser vendors are free to add their own CSS properties, allowing you to perform more advanced things, but only in that particular browser. This is frequently used by the various vendors to try to persuade W3 (the organization in charge of many Internet related specifications, including HTML and CSS) into adding functionality to the next version of the CSS specification.</p>
+                <p>Historically, the problem with rendering differences across browsers have been a larger problem than it currently is. Especially Microsoft has had problems following the specification with their Internet Explorer, with version 6 being the worst example of this - competing browsers were following the specification way better, but because of market shares, developers had to implement several nasty workarounds to fully support IE6 and its many quirks. Fortunately for developers all over the world, Microsoft has done a lot to remedy these problems in later versions of Internet Explorer.</p>
+                <p>However, you will still run into differences in rendering, especially when you test across different browsers on different devices and operating systems. Your webpage might not look entirely the same in Internet Explorer as it does in Chrome, and there might even be differences when looking at it in Chrome on a PC with Linux, OSX or Linux. For that reason, always test your webpage in as many browsers as possible and make sure that your CSS validates (more on that later).</p>
+                <h4>Sumary</h4>
+                <p>CSS is interpreted by the client (usually a webbrowser) on each request, and since different browsers uses different parsing engines, things might not look entirely the same across different devices, platforms and browser versions. Make sure that you test all of your pages in as many browsers as possible and to help reduce the amount of problems you should make sure that your CSS code can pass the checks of the W3 validator.</p>
+                <p>In this tutorial we will only be discussing properties and techniques which can currently be used in the most recent versions of the most popular browsers: Microsoft Internet Explorer, Google Chrome, Mozilla Firefox and Apple Safari. However, the fact that these properties and techniques are understood by the browsers still doesn't mean that they are interpreted AND used in the exact same way, so always remember the golden rule of CSS: Test your work as much as possible!</p>
+        </section>
+
+        <section id="Linking_CSS_to_HTML" class="main-section">
+                <header>Linking CSS to HTML</header>
+                <p>As already explained, CSS contains information about how your markup (usually HTML) should be presented to the end user. That means that the two languages have to be linked together - the browser needs to know that you want to combine a piece of HTML markup with a piece of CSS code. To obtain the highest level of flexibility, there are several ways to accomplish this.</p>
+                <h3>Inline CSS through the Style attribute</h3>
+                <p>Almost every HTML tag includes the Style attribute and using this attribute, you can specify CSS directly for the element. This defeats one of the main advantages of CSS, re-usability, since CSS code applied with this technique only applies to a single element and can't be re-used for other elements.</p>
+                <p>It is however a great way to test things out, or to specify rules which you do not expect ever to re-use. Here's how it may be used:</p>
+                <code>
+                        <p class="codepen" data-height="137" data-theme-id="0" data-default-tab="html,result" data-user="franciscomelov" data-slug-hash="byaybJ" style="height: 137px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Linking CSS to HTML-1">
+                                <span>See the Pen <a href="https://codepen.io/franciscomelov/pen/byaybJ/">
+                                Linking CSS to HTML-1</a> by Francisco Ecatl Melo Valle (<a href="https://codepen.io/franciscomelov">@franciscomelov</a>)
+                                on <a href="https://codepen.io">CodePen</a>.</span>
+                              </p>
+                              <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                </code>
+                <p>Notice that I can define several properties for the same element, in this case rules for text color as well as text decoration. This is by far the easiest way to use CSS, since it doesn't involve extra tags or files - just locally defined CSS. However, for reasons already stated, this is not the preferred way of using CSS.</p>
+                <p>Another disadvantage is the fact that the style code will have to be downloaded each time the page is requested. This is not really a problem for a single element with a couple of style rules, but if you have a loop which outputs the same style attribute code many times, then it fills up your markup document unnecessarily, and instead of being cached by the browser and only downloaded once per visitor, the code is downloaded again and again!</p>
+                <h3>Document wide CSS through style blocks</h3>
+                <p>The second easiest way to apply CSS to elements in your document is through the use of a style block. HTML includes a tag called style, which can contain CSS code. Here, you can define rules which can then be used all across your document. Here's an example:</p>
+                <code>
+                        <p class="codepen" data-height="440" data-theme-id="0" data-default-tab="html,result" data-user="franciscomelov" data-slug-hash="PvEvwX" style="height: 440px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Linking CSS to HTML-2">
+                                <span>See the Pen <a href="https://codepen.io/franciscomelov/pen/PvEvwX/">
+                                Linking CSS to HTML-2</a> by Francisco Ecatl Melo Valle (<a href="https://codepen.io/franciscomelov">@franciscomelov</a>)
+                                on <a href="https://codepen.io">CodePen</a>.</span>
+                              </p>
+                              <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                </code>
+                <p>Notice how I can now define the rule in one place and then re-use it multiple times in the document. You can define multiple style blocks, if you want to, and place them wherever in the document you want to. It is however considered best practice to include the style block(s) in the top of the document, inside the head (<head>) section.</p>
+                <h3>Global CSS through external CSS documents</h3>
+                <p>So, by using the style block as described above, you can re-use your CSS code all over the document, but you still have to include it on all of the pages of your website, which requires the browser to download it on each request instead of just downloading an external CSS file once and then cache it. This is a major disadvantage of the style block approach and why you should normally go for the third approach instead: The external CSS file!</p>
+                <p>A CSS file is simply a plain text file saved with a .css extension and then referenced in the file(s) where you want to apply the rules. If we re-use the example from the style block part, we can then move the "highlight" rule to a new file (without the HTML part) and save it under an appropriate name, e.g. style.css:</p>
+                <code>
+                        <p class="codepen" data-height="169" data-theme-id="0" data-default-tab="css" data-user="franciscomelov" data-slug-hash="ZNvNQO" style="height: 169px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Linking CSS to HTML-3">
+                                <span>See the Pen <a href="https://codepen.io/franciscomelov/pen/ZNvNQO/">
+                                Linking CSS to HTML-3</a> by Francisco Ecatl Melo Valle (<a href="https://codepen.io/franciscomelov">@franciscomelov</a>)
+                                on <a href="https://codepen.io">CodePen</a>.</span>
+                              </p>
+                              <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                </code>
+                <p>We can then reference it in our HTML document, using the link element:</p>
+                <code>
+                        <p class="codepen" data-height="324" data-theme-id="0" data-default-tab="html" data-user="franciscomelov" data-slug-hash="ZNvNQO" style="height: 324px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Linking CSS to HTML-3">
+                                <span>See the Pen <a href="https://codepen.io/franciscomelov/pen/ZNvNQO/">
+                                Linking CSS to HTML-3</a> by Francisco Ecatl Melo Valle (<a href="https://codepen.io/franciscomelov">@franciscomelov</a>)
+                                on <a href="https://codepen.io">CodePen</a>.</span>
+                              </p>
+                              <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                        <p><em>This example requires the HTML and CSS file to be in the same directory - if they are not, you need to update the href attribute to match the path.</em></p>
+                </code>
+                <p>Now we define all of our CSS code in its own file and then just reference it inside all of our sub pages to take advantage of the defined rules! If you want to, you can divide your CSS code into several external files and only include the ones you need - it all depends on how big your website is and how you prefer to organize your code.</p>
+                <h4>Summary</h4>
+                <p>We have talked about different ways for your webpage to consume CSS code in this chapter. </p>
+                <p>The first approach was the <span>inline style attribute.</span> Its biggest advantage is the fact that its so easy to use, but as a disadvantage, it cuts you off from some of the biggest benefits of CSS: Code re-usability and the ability to make layout changes in a single place and have it applied across your entire website.</p>
+                <p>The second approach uses the <span>style block.</span> It's only slightly less cumbersome to use than the inline style attribute, and allows re-using your CSS code. The biggest disadvantage is that code in a style block is global across the page, but not across multiple pages, meaning that you will have to include it on each subpage of your website.</p>
+                <p>The third approach is the one you most commonly see on websites: <span>External CSS file(s).</span> It only has the disadvantage of being slightly harder to work with, because you have to place the CSS in a separate file which you will have to open to make changes - a very small price to pay for the ability to re-use your CSS across your entire website!</p>
+                <p><span>Please be aware that throughout this tutorial, I will mainly be using the second and the first approach, but only because the examples presented in this tutorial are all small, separate entities and not a big website. It's simply a lot easier to demonstrate the various CSS properties this way, instead of having to separate markup and CSS into distinct files and explaining this fact each time. You are free to use the approach you prefer, but for anything other than small examples and very simple websites, the third approach is usually the superior way!</span></p>
+        </section>
+
+        <section id="Introduction_to_CSS_Selectors" class="main-section">
+                <header>Introduction to CSS Selectors</header>
+                <p>We already briefly talked about selectors in the chapter on the anatomy of CSS, but as you will soon realize, selectors comes in many different flavors and in various combinations. Selectors can be extremely powerful and most styling would not be possible without them.</p>
+                <p>As already mentioned, a selector encapsulates one or several properties, which dictates behavior and look for a certain element. The cool thing about selectors is that they allow you to target an element in different ways, in different states, in various hierarchies and even several elements at the same time.</p>
+                <h3>Naming your selectors</h3>
+                <p>Basically, a selector name must begin with an underscore (_), a hyphen (-), or a letter (a-z) and then be followed by any number of hyphens, underscores, letters, or numbers. When naming your selectors, there are some characters that you can't use, usually because they have a special meaning - these will be covered later on in this tutorial.</p>
+                <h4>Summary</h4>
+                <p>A selector is a name and one or several properties. In the next chapters, I'll show you all the ways you can use a selector and to demonstrate it, I will be using several CSS properties. You might not know them all by now, or perhaps none of them at all, but don't worry - they will all be explained later on. I include them now because empty selectors doesn't really give a good impression on how CSS works, but feel free to jump around in this tutorial as you please if you want to know more about the properties used.</p>
+        </section>
+
+        <section id="The_Element_selector" class="main-section">
+                <header>The Element selector</header>
+                <p>The most basic type of selector is probably the one that simply targets an existing HTML element. For instance, you can target all paragraph elements (&lt;p&gt;) simply by writing the name of it in your stylesheet:</p>
+                <pre>
+                     <code>
+                        p {
+                                color: Red;
+                        }
+                     </code>
+                     
+                </pre>
+                <p>With this simple rule, we have just changed the text color of all paragraphs to red - the element selector is very strong!</p>
+                <p>You can target any of the valid HTML elements this way and even non-existing elements can be targeted - if you want a &lt;tiger&gt; tag on your page, you are free to write a CSS selector which targets your tiger-element (although that wouldn't validate!).</p>
+                <p>So, for most of the time, your element selectors targets your everyday HTML tag. For instance, you may decide that decide that bold-tags should no longer cause text to be bold:</p>
+                <pre>
+                    <code>
+                         b {
+                        font-weight: normal;
+                        }
+                    </code>  
+                </pre>
+                <p>The internal stylesheet of most browsers dictates that bold tags have bold text, but with the power of CSS, you can easily change that, either locally (more on that later) or globally, like we just did.</p>
+                <p>Here is a more complete example, where we use what we just learned. Feel free to check it out and play around with it, to see how it works:</p>
+                <code>
+                                <p class="codepen" data-height="338" data-theme-id="0" data-default-tab="html,result" data-user="franciscomelov" data-slug-hash="oRpRMP" style="height: 338px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="The Element selector-1">
+                                                <span>See the Pen <a href="https://codepen.io/franciscomelov/pen/oRpRMP/">
+                                                The Element selector-1</a> by Francisco Ecatl Melo Valle (<a href="https://codepen.io/franciscomelov">@franciscomelov</a>)
+                                                on <a href="https://codepen.io">CodePen</a>.</span>
+                                              </p>
+                                              <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                </code>
+                <h4>Summary</h4>
+                <p>So, the major advantage of element selectors is that they are global - every place where your stylesheet is included, these rules affect your elements. Obviously, this is also the main disadvantage of the element selectors, because sometimes that's really not what you want. Fortunately, there are several other options, including class and ID selectors, which we'll look into next.</p>
+        </section>
+
+        <section id="The_Class_selector" class="main-section">  
+                <header>The Class selector</header>
+                <p>We previously looked at elements selctors, which targets all elements (which normally translates to HTML tags) on a page. If we want to be more specific, class selctors is the next step. Instead of targeting all elements with a specific name, they target all elements that has a specific class name specified.</p>
+                <p>While this normally makes the list of targets narrower, it does give you the opportunity to target elements of various types (e.g. both bold and italic tags) at the same time - with a class selector, the element type/name is no longer the important part.</p>
+                <p>A class selector looks just like an element selector, but instead of using names that are tied to the names of HTML elements, you make up the name and then you prefix it with a dot (.). For instance:</p>
+                <ul>
+                        <li>.red { }</li>
+                        <li>.myElements { }</li>
+                        <li>.navigation { }</li>
+                </ul>
+                <p>Only elements that uses one or several of these class names are targeted. Allow me to illustrate how this works with an example:</p>
+                <code>
+                        <p class="codepen" data-height="217" data-theme-id="0" data-default-tab="html,result" data-user="franciscomelov" data-slug-hash="mYxbza" style="height: 217px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="The Class selector-1">
+                                <span>See the Pen <a href="https://codepen.io/franciscomelov/pen/mYxbza/">
+                                The Class selector-1</a> by Francisco Ecatl Melo Valle (<a href="https://codepen.io/franciscomelov">@franciscomelov</a>)
+                                on <a href="https://codepen.io">CodePen</a>.</span>
+                              </p>
+                              <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                </code>
+                <p>Try out the example and see the result for yourself. Notice that two similar paragraph elements now look completely different because we have assigned a class to the first one.</p>
+                <p>Also notice how I can name the selectors however I want - the two names are actually a great example of bad and good (or at least better) naming conventions. The name "red" is not a good name, because the rule could easily contain more than the color-related rule, or the color could easily be changed in a re-design from red to blue. The latter name is better, because it is more general and doesn't convey a specific color or look.</p>
+                <h3>Element specific classes</h3>
+                <p>In our first example, all element types could use our classes but in some situations, you may want to limit the use to a specific element type. This is usually done to indicate how the class is supposed to be used, to allow for more than one class with the same name and avoid conflicts. Element specific classes are used simply by appending the class name to the element name in your selector, like this:</p>
+                <code>
+                        <p class="codepen" data-height="185" data-theme-id="0" data-default-tab="html,result" data-user="franciscomelov" data-slug-hash="zQWObd" style="height: 185px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="The Class selector-2">
+                                <span>See the Pen <a href="https://codepen.io/franciscomelov/pen/zQWObd/">
+                                The Class selector-2</a> by Francisco Ecatl Melo Valle (<a href="https://codepen.io/franciscomelov">@franciscomelov</a>)
+                                on <a href="https://codepen.io">CodePen</a>.</span>
+                              </p>
+                              <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                </code>
+                <p>Try out the example and notice how even though we try to use the beautiful class in two places, it only works for the span element, because we now require this.</p>
+                <h3>Multiple classes</h3>
+                <p>Classes are not unique and the class property of an HTML tag allows you to specify more than one class. The cool thing about this is that it allows you to combine the rules for several selectors and use them for the same tag however you want to.</p>
+                <p>This also means that instead of writing selectors with many rules and then only targeting few elements, you can write less specific selectors and simply combine them when it is appropriate. This allows for greater re-usability, which is really what CSS is all about.</p>
+                <p>Have a look at this example:</p>
+                <code>
+                        <p class="codepen" data-height="224" data-theme-id="0" data-default-tab="html,result" data-user="franciscomelov" data-slug-hash="wbmwbv" style="height: 224px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="The Class selector-3">
+                                <span>See the Pen <a href="https://codepen.io/franciscomelov/pen/wbmwbv/">
+                                The Class selector-3</a> by Francisco Ecatl Melo Valle (<a href="https://codepen.io/franciscomelov">@franciscomelov</a>)
+                                on <a href="https://codepen.io">CodePen</a>.</span>
+                              </p>
+                              <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                </code>
+                <p>Here we use CSS to show status information. We have a common .status selector and then we have a selector for error messages and one for informational messages. Error and information messages obviously share stuff, since they are both a type of messages, but they also have distinct looks. So, we put the shared stuff in a class called .status, and then put the rest in different classes called .error and .information, and then we use them on the div tags, simply by separating their names with a space.</p>
+                <p>Without the common .status class, we would have to repeat all the properties for each class, which would be a waste of bandwidth and force us to change stuff in multiple places whenever we wanted thicker borders or something like that.</p>
+                <h4>Summary</h4>
+                <p>As demonstrated, CSS classes are very versatile - they can be as specific or non-specific as you want them to and you can use them for all sorts of element, or not, depending on whether the element references the class or not. This makes classes the most flexible type of selector you can use in CSS. In the next chapter, we'll have a look at the ID selector, which is even more specific.</p>
+
+        </section>
+
+
+        <section id="The_ID_selector" class="main-section">
+                <header>The ID selector</header>
+                <p>We started the Selector-part of this tutorial with the most wide-ranging selector, which targets elements, then we talked about the more specific class-type selector, and now we'll be discussing the most specific selector type: The ID selector. The ID selector is actually so specific that it only targets a single element on the page!</p>
+                <p>Just as we saw with the class selector, the ID selector uses a specific attribute found on all HTML tags to figure out whether the specific rule applies to the element or not, and that's the ID attribute. The value of the ID attribute should be unique, according to the HTML specification, meaning that it can only be used on a single element per page. As a consequence of that, a CSS ID selector should also be used only when you need to target one, specific and unique element on a page.</p>
+                <p>An ID selector looks just like a class selector, but instead of having a dot as the prefix, it uses the hash sign (#). Let's see how it works:</p>
+                <code>
+                        <p class="codepen" data-height="145" data-theme-id="0" data-default-tab="html,result" data-user="franciscomelov" data-slug-hash="PvRoYM" style="height: 145px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="The ID selector-1">
+                                <span>See the Pen <a href="https://codepen.io/franciscomelov/pen/PvRoYM/">
+                                The ID selector-1</a> by Francisco Ecatl Melo Valle (<a href="https://codepen.io/franciscomelov">@franciscomelov</a>)
+                                on <a href="https://codepen.io">CodePen</a>.</span>
+                              </p>
+                              <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                </code>
+                <p>As you can see, it works just like classes, but instead of using a dot, we use a hash character, and instead of using the class attribute, we use the id attribute - the difference lies in the fact that the ID should be unique, as explained in the introduction to this chapter.</p>
+                <p>So why use ID selectors at all? Well obviously, no one will be forcing you - you may use class selectors instead, if you want to. But by using an ID selector, you specify to yourself and everyone else who will be writing markup for your CSS, that the selector should only be used in one single place. This is often used for main page elements, e.g. the tags that creates the structure of the page (menu, side box, main content and so on).</p>
+                <p>Besides that, you may already have specified ID's for some of your tags, e.g. to reference them from JavaScript code. If so, you may write a CSS ID selector and have it applied automatically.</p>
+                <h3>Element specific ID selectors</h3>
+                <p>Just like the class selector, you may limit an ID selector to a specific element type by putting the name in front of the selector name, like this:</p>
+                <pre>
+                        <code>
+                                h1#main-header {
+                                        color: GreenYellow;
+                                }
+                        </code>
+                </pre>
+                <p>With that in place, this specific ID selector will only apply to a header (h1) tag.</p>
+                <h4>Summary</h4>
+                <p>With the ID selector, you get really specific - from targeting all elements by name/type or class name, the ID selector, by design, only targets a single element on the page. Use it mainly for the larger, structural elements on your page, e.g. the navigation, top area, main content and so on.</p>
+
+        </section>
+
+        <section id="Grouping_selectors" class="main-section">
+                <header>Grouping selectors</header>
+                <p>So far, all of our selectors have only targeted one class, one ID or one element. However, CSS makes it ridiculously easy to target more than one element at the same time, allowing you to specify the same properties and rules for more than one element at the same time <span>- just separate the selector names with a comma and you're good to go.</span> This is another one of those features of CSS which allows for greater code re-usability - there's no reason to specify the same properties for several elements/classes, if you can re-use them. Here's a nifty example:</p>
+                <code>
+                        <p class="codepen" data-height="232" data-theme-id="0" data-default-tab="html,result" data-user="franciscomelov" data-slug-hash="OYvJyJ" style="height: 232px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Grouping selectors-1">
+                                <span>See the Pen <a href="https://codepen.io/franciscomelov/pen/OYvJyJ/">
+                                Grouping selectors-1</a> by Francisco Ecatl Melo Valle (<a href="https://codepen.io/franciscomelov">@franciscomelov</a>)
+                                on <a href="https://codepen.io">CodePen</a>.</span>
+                              </p>
+                              <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                </code>
+                <p>As you can see, we can now target h1, h2 and h3 elements with one, single rule, instead of having to specify it for each of them. You can mix and match with class and ID selectors too, if you want to:</p>
+                <pre>
+                        <code>
+                                h1#main, h2.sub, h3, .someClass, #anID {
+                                        color: Maroon;
+                                }
+                        </code>
+                </pre>
+                <p>Now the really cool thing is that thanks to CSS and its cascading nature, you can still add rules specific to one or several of elements and the browser will apply it according to precedence (we'll talk more about that later). Check out this example:</p>
+                <code>
+                        <p class="codepen" data-height="279" data-theme-id="0" data-default-tab="html,result" data-user="franciscomelov" data-slug-hash="byvGEV" style="height: 279px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Grouping selectors-2">
+                                <span>See the Pen <a href="https://codepen.io/franciscomelov/pen/byvGEV/">
+                                Grouping selectors-2</a> by Francisco Ecatl Melo Valle (<a href="https://codepen.io/franciscomelov">@franciscomelov</a>)
+                                on <a href="https://codepen.io">CodePen</a>.</span>
+                              </p>
+                              <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                </code>
+                <p>Try out the example and notice how the browser uses the appropriate properties from the selectors. We are able to group together the common properties in one selector, and then we can add and even modify them in the more specific selectors later on.</p>
+                <h4>Summary</h4>
+                <p>Grouping selectors together makes it so easy to re-use CSS code, while maintaining a very high degree of flexibility - if a common rule is used in several places, you can still overrule it by writing a more specific selector.</p>
+
+        </section>
+
+        <section id="Reference" class="main-section">
+                <header>Reference</header>
+                <ul>
+                        <li>All the documentation in this page is taken from <a href="https://css3-tutorial.net/introduction/what-is-css/" target="_blank">CSS3-Tutorial</a> </li>
+                        <li>A complete reference guide <a href="https://css-tricks.com">Here</a></li>
+                </ul>
+        </section>
+
+    </main>
+    
+<script src="./script.js"></script>
+</body>
+</html>
