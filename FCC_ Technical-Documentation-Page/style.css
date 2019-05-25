@@ -38,19 +38,22 @@ span {
     font-weight: bold;
 }
 
+pre {
+  background-color:rgba(252, 252, 186, 0.541);
+  border-radius: 1em;
+  font-size: 1.3em;
+}
 
 /*BARRA NAVEGACION*/
 
-nav:first-child{
-  margin-left: 250px;
-}
+
 
 #navbar header {
     color:white;
 }
 
 
-.sidenav {
+#navbar {
  
   height: 100%;
   width: 250px;
@@ -63,6 +66,8 @@ nav:first-child{
   padding-top: 20px;
  
 }
+
+
 
 
 
@@ -84,7 +89,7 @@ nav:first-child{
 
 @media(max-width:700px) {
 
-  .sidenav {
+  #navbar{
  
     height: 200px;
     width: 100%;
