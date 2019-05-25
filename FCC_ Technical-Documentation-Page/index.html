@@ -18,7 +18,7 @@
                 <div id="mySidenav" class="sidenav">
                         <header>Index</header>
 
-                                <a class="nav-link" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                              
                                 <a class="nav-link" href="#What_is_CSS?">What is CSS?</a>
                                 <a class="nav-link" href="#Hello,_CSS_world!">Hello, CSS world!</a>
                                 <a class="nav-link" href="#The_Anatomy_of_a_CSS_Rule">The Anatomy of a CSS Rule</a>
@@ -32,12 +32,11 @@
                                 <ul>
                                         <a href="#What_is_CSS?"><li>TOP</li></a>
                                         <a href="#Reference"><li>BOTTOM</li></a>
-                                        <a href="#"><li></li></a>
+                                        
                                 
                                 </ul>
                               
                    </div>
-                   <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
 
     </nav>
 
@@ -47,7 +46,7 @@
     <main id="main-doc">
 
         <section id="What_is_CSS?" class="main-section">
-            <header>What is CSS?</header>
+            <header class="top">What is CSS?</header>
             <p>CSS is short for Cascading Style Sheets and is the primary language used to describe look and formatting for webpages across the Internet and documents of markup (e.g. HTML and XML) in general.</p>
             <p>A markup language like HTML was initially designed to provide information about formatting and looks itself, but it soon became clear that it would make much more sense to split this into two layers: Document Content and Document Presentation, with CSS fulfilling the task of the latter. Historically that is why HTML has tags like font, which sole purpose is to adjust font family, color and size locally, a job that is today handled by CSS. This allows the developer to re-use formatting rules across several places in the same document and even across multiple documents. Here's an example to prove my point, and don't worry if it's not entirely clear to you what it does - all aspects will be explained throughout this tutorial:</p>
             <h3>Old style text formatting, using only HTML:</h3>
@@ -380,7 +379,6 @@
         </section>
 
     </main>
-    
-<script src="./script.js"></script>
+
 </body>
 </html>
