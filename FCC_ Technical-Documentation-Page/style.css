@@ -6,16 +6,34 @@ body {
 #main-doc {
     border-radius: .2cm;
     background-color: hsla(101, 62%, 90%, 0.993);
-    margin: 3em;
+    margin-left: 250px;
+    margin-top: 10px;
     padding: 2em;
+  
 }
 
 header {
+  
     font-size: 2em;
     font-weight: bolder;
     text-align: center;
 }
 
+#main-doc header {
+  margin-top: 50px;
+}
+
+#main-doc .top {
+  margin-top: -15px;
+}
+
+p {
+  font-size: 1.1em;
+}
+
+h4 {
+  font-size: 1.2em;
+}
 span {
     font-weight: bold;
 }
@@ -23,53 +41,69 @@ span {
 
 /*BARRA NAVEGACION*/
 
+nav:first-child{
+  margin-left: 250px;
+}
+
 #navbar header {
     color:white;
 }
 
-#main-doc{
-    transition: margin-left .5s;
-padding: 16px;
+
+.sidenav {
+ 
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+ 
 }
 
 
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
+
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  border-bottom: 1px black solid;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+  border-bottom: 1px white solid;
+}
+
+
+@media(max-width:700px) {
+
+  .sidenav {
+ 
+    height: 200px;
+    width: 100%;
+    position: absolute;
     z-index: 1;
     top: 0;
     left: 0;
     background-color: #111;
     overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-  }
-  
-  .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
-  
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+    padding-top: 20px;
   }
 
-  nav span {
-    top: 0;
-    color: white;
-    position: fixed;
-  }
+  #main-doc {
+    border-radius: .2cm;
+    background-color: hsla(101, 62%, 90%, 0.993);
+    margin-left: auto;
+    margin-top: 200px;
+    padding: 2em;
   
+}
+}
+
