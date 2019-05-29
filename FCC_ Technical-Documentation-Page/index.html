@@ -13,10 +13,10 @@
 </head>
 <body>
    <!--NAV-BAR-->
-    <nav id="navbar">
-            <header>Introduction to CSS</header>
-                <div id="mySidenav" class="sidenav">
-                        <header>Index</header>
+    <nav id="navbar" class="sidenav">
+           
+                
+                         <header>Introduction to CSS</header>
 
                               
                                 <a class="nav-link" href="#What_is_CSS?">What is CSS?</a>
@@ -29,14 +29,10 @@
                                 <a class="nav-link" href="#The_Class_selector">The Class selector</a>
                                 <a class="nav-link" href="#The_ID_selector">The ID selector</a>
                                 <a class="nav-link" href="#Grouping_selectors">Grouping selectors</a>
-                                <ul>
-                                        <a href="#What_is_CSS?"><li>TOP</li></a>
-                                        <a href="#Reference"><li>BOTTOM</li></a>
-                                        
-                                
-                                </ul>
+                                <a class="nav-link" href="#Reference">Reference</a>
+
                               
-                   </div>
+               
 
     </nav>
 
@@ -96,9 +92,9 @@
             <p>So, in the previous chapter, we used the classic "Hello, world!" example to get a glimpse of just how easy it is to style an HTML element with CSS. But why did it look the way it did? In this chapter, we'll focus on the anatomy and syntax of CSS, to get a deeper understanding of how it works. Let's have a look at the previously mentioned example again, where we had a CSS rule which targeted H1 elements:</p>
             <pre>
                 <code>
-                   h1 {
-                    color: DeepSkyBlue;
-                    }
+    h1 {
+       color: DeepSkyBlue;
+    }
                 </code>
             </pre> 
             <p>What we have here is a <span>selector</span> with one <span>property</span> and one <span>value</span> - these are the core concepts of CSS and you should try to remember their names as you progress through this tutorial. In this example, <span>h1 is the selector name, color is the property</span> and <span>DeepSkyBlue is the value</span>.</p>
@@ -106,15 +102,15 @@
             <p>This might seem a bit too complex for a simple selector like the one we have above, but as soon as we use more complex selector names with more properties and more complex values, it makes perfect sense. Let me illustrate it with a more complex example:</p>
             <pre>
                 <code>
-                                h1, h2, h3 {
-                                        color: DeepSkyBlue;
-                                        background-color: #000;
-                                        margin: 10px 5px;
-                                    }
+    h1, h2, h3 {
+        color: DeepSkyBlue;
+        background-color: #000;
+        margin: 10px 5px;
+    }
                                     
-                                    h2 {
-                                        color: GreenYellow;
-                                    }
+    h2 {
+        color: GreenYellow;
+    }
                 </code>
             </pre>
             <p>Now we have several selectors, with the first one targeting several elements, as well as several properties and several values - now you can probably see why we need the CSS syntax rules to allow for proper parsing of your instructions.</p>
@@ -123,15 +119,15 @@
             <p>Some people prefer to have the initial curly brace on its own line and to have a space before the colon as well:</p>
             <pre>
                     <code>
-                                h1 {
-                                        color: DeepSkyBlue;
-                                    }
+    h1 {
+        color: DeepSkyBlue;
+    }
                     </code>
             </pre>
             <p>And that works just as well. In fact, a lot of software has been written to compact/minify CSS to take up the least possible amount of space, like this:</p>
             <pre>
                 <code>
-                                h1{color : DeepSkyBlue;}
+    h1{color : DeepSkyBlue;}
                 </code>
             </pre>
             <p>That will work just fine too, but for more complex rules, it will make it harder to read and edit. However, the parser will understand it just as well as our first example, thanks to the special characters used as separators, as already discussed.</p>
@@ -223,9 +219,9 @@
                 <p>The most basic type of selector is probably the one that simply targets an existing HTML element. For instance, you can target all paragraph elements (&lt;p&gt;) simply by writing the name of it in your stylesheet:</p>
                 <pre>
                      <code>
-                        p {
-                                color: Red;
-                        }
+    p {
+        color: Red;
+    }
                      </code>
                      
                 </pre>
@@ -234,9 +230,9 @@
                 <p>So, for most of the time, your element selectors targets your everyday HTML tag. For instance, you may decide that decide that bold-tags should no longer cause text to be bold:</p>
                 <pre>
                     <code>
-                         b {
-                        font-weight: normal;
-                        }
+    b {
+        font-weight: normal;
+    }
                     </code>  
                 </pre>
                 <p>The internal stylesheet of most browsers dictates that bold tags have bold text, but with the power of CSS, you can easily change that, either locally (more on that later) or globally, like we just did.</p>
@@ -325,9 +321,9 @@
                 <p>Just like the class selector, you may limit an ID selector to a specific element type by putting the name in front of the selector name, like this:</p>
                 <pre>
                         <code>
-                                h1#main-header {
-                                        color: GreenYellow;
-                                }
+    h1#main-header {
+        color: GreenYellow;
+    }
                         </code>
                 </pre>
                 <p>With that in place, this specific ID selector will only apply to a header (h1) tag.</p>
@@ -350,9 +346,9 @@
                 <p>As you can see, we can now target h1, h2 and h3 elements with one, single rule, instead of having to specify it for each of them. You can mix and match with class and ID selectors too, if you want to:</p>
                 <pre>
                         <code>
-                                h1#main, h2.sub, h3, .someClass, #anID {
-                                        color: Maroon;
-                                }
+    h1#main, h2.sub, h3, .someClass, #anID {
+        color: Maroon;
+    }
                         </code>
                 </pre>
                 <p>Now the really cool thing is that thanks to CSS and its cascading nature, you can still add rules specific to one or several of elements and the browser will apply it according to precedence (we'll talk more about that later). Check out this example:</p>
