@@ -58,8 +58,8 @@ li a:hover  {
 
 #welcome-section {
     height: 100vh;
-    background-color: green;
-  
+    background-color: black;
+    color: white;
 }
 
 #welcome-section h1 {
@@ -74,8 +74,49 @@ li a:hover  {
 
 /* PROJECTS SECTION*/
 #projects {
+    display: flex;
+    flex-wrap: wrap;
     margin-bottom: 100px;
+    justify-content: space-around;
+    
 }
+
+#projects div{
+    
+    padding: 30px;
+    padding-bottom: 40px;
+    border-radius: 10%;
+  
+    
+}
+#projects div {
+    margin:auto;
+    margin-top:  50px;
+    margin-left: 40px;
+    margin-right: 40px;
+    height: 200px;
+    text-align: center;
+    border: 2px black solid;
+}
+#projects .project-tile p {
+    font-size: 1.5em;
+    color:black;
+}
+
+#projects img {
+    height:  100%;
+}
+
+@media (max-width: 700px) {
+    #projects div {
+        margin:auto;
+        margin-top:  50px;
+       
+   
+    }
+}
+
+
 
 
 
@@ -108,17 +149,16 @@ footer {
 
 @media (max-width: 700px) {
     footer {
-        height: 100vh;
-        display: inline-block;
-        
+        height: 90vmax;
+        display: inline-block;    
     }
 
     #contact i {
-     display: block;
        font-size: 5em;
        margin-top: 1em;
        color:white;
     }
+
     
 }
 
