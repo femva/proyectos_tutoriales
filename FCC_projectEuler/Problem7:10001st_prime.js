@@ -1,23 +1,27 @@
 function nthPrime(n) {
-  var prime=0;
-  var countPrimes=1
-  // Good luck!
-//comienz a contar a partir del 3 de 2 en dos para evitar pares 
+  var prime=[2];
 
-for(var i=3;countPrimes<n;i +=2){
+  // Good luck!
+//solo prueba numeros impares
+
+for(var i=3;prime.length<n;i +=2){
+
   var isPrime =false;
-  for(var j=2;j<i;j++){//checar si no primo
-    if(i%j==0){
+  for(var j=0;j<prime.length;j++){//solo reviza si es divisible entre los numeros primos anteriores
+    if(i%prime[j]==0){
       isPrime=true
+      break;
     }
   }
   if(!isPrime){//si es primo lo guarda en el array
-    prime=i;
+    prime.push(i);
     isPrime =false;
-    countPrimes++;
+    
+ 
   }
 }
-  return prime;
+
+  return prime[prime.length-1];
 }
 
-console.log(nthPrime(10001));
+console.log(nthPrime(100));
