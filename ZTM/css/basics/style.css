@@ -1,0 +1,20 @@
+body {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScSuJQASvrndp9h_1TyaP5w-GwgYZA7djKnnYGKenCW0C4KaIz);
+    background-size: cover;
+}
+
+h2 {
+    color: rgba(3, 62, 85,.5);
+    text-align: center;
+    border: 5px solid #11D411;
+    cursor: pointer;
+}
+
+p {
+    color: pink;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+}
